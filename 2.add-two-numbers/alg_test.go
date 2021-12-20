@@ -1,4 +1,4 @@
-package add_two_numbers
+package __add_two_numbers
 
 import (
 	"fmt"

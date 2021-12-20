@@ -1,4 +1,4 @@
-package median_of_two_sorted_arrays
+package __median_of_two_sorted_arrays
 
 func Max(a, b int) int {
 	if a > b {

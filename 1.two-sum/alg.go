@@ -1,4 +1,4 @@
-package two_sum
+package __two_sum
 
 func twoSum(nums []int, target int) []int {
 	posMap := map[int]int{}
