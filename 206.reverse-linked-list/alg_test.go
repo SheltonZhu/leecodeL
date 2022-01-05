@@ -7,7 +7,7 @@ import (
 
 func Test(t *testing.T) {
 	head := &ListNode{1, &ListNode{2, &ListNode{3, &ListNode{4, &ListNode{5, nil}}}}}
-	output := &ListNode{1, &ListNode{2, &ListNode{3, &ListNode{4, &ListNode{5, nil}}}}}
+	output := &ListNode{5, &ListNode{4, &ListNode{3, &ListNode{2, &ListNode{1, nil}}}}}
 	ret := reverseList(head)
 	if !reflect.DeepEqual(output, ret) {
 		t.Errorf("failed. output: %v, return: %v", output, ret)
