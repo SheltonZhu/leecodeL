@@ -1,16 +1,12 @@
 package __two_sum
 
 func twoSum(nums []int, target int) []int {
-	posMap := map[int]int{}
-	for idx, num := range nums {
-		posMap[num] = idx
-	}
-	for idx, num := range nums {
-		posArr := posMap[target-num]
-		if posArr != 0 && posArr != idx {
-			return []int{idx, posArr}
+	m := make(map[int]int)
+	for fi, num := range nums {
+		if ti, ok := m[target-num]; ok {
+			return []int{ti, fi}
 		}
-
+		m[num] = fi
 	}
 	return nil
 }
