@@ -21,13 +21,15 @@ func (l *ListNode) String() string {
 	str.WriteString(strconv.Itoa(tmp.Val))
 	return str.String()
 }
+
 func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
-	ret := ListNode{}
-	carry := 0
-	sumNode := &ret
-	for l1 != nil || l2 != nil || carry > 0 {
-		x := 0
-		y := 0
+	var (
+		root  = ListNode{}
+		carry = 0
+		sumN  = &root
+	)
+	for l1 != nil || l2 != nil || carry != 0 {
+		x, y := 0, 0
 		if l1 != nil {
 			x = l1.Val
 		}
@@ -36,8 +38,8 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 		}
 		sum := x + y + carry
 		carry = sum / 10
-		sumNode.Next = &ListNode{Val: sum % 10}
-		sumNode = sumNode.Next
+		sumN.Next = &ListNode{Val: sum % 10}
+		sumN = sumN.Next
 		if l1 != nil {
 			l1 = l1.Next
 		}
@@ -45,5 +47,5 @@ func addTwoNumbers(l1 *ListNode, l2 *ListNode) *ListNode {
 			l2 = l2.Next
 		}
 	}
-	return ret.Next
+	return root.Next
 }
