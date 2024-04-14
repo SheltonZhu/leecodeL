@@ -40,3 +40,30 @@ func Test4(t *testing.T) {
 		t.Error("test failed.", expected, ret)
 	}
 }
+
+func Test5(t *testing.T) {
+	s := "aacabdkacaa"
+	ret := longestPalindrome(s)
+	expected := "aca"
+	if !reflect.DeepEqual(expected, ret) {
+		t.Error("test failed.", expected, ret)
+	}
+}
+
+func Test6(t *testing.T) {
+	s := "eabcb"
+	ret := longestPalindrome(s)
+	expected := "bcb"
+	if !reflect.DeepEqual(expected, ret) {
+		t.Error("test failed.", expected, ret)
+	}
+}
+
+func Test7(t *testing.T) {
+	s := ""
+	ret := longestPalindrome(s)
+	expected := ""
+	if !reflect.DeepEqual(expected, ret) {
+		t.Error("test failed.", expected, ret)
+	}
+}
