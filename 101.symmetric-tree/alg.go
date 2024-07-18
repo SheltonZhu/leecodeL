@@ -9,6 +9,7 @@ type TreeNode struct {
 func isSymmetric(root *TreeNode) bool {
 	return check(root, root)
 }
+
 func check(left, right *TreeNode) bool {
 	if left == nil && right == nil {
 		return true
