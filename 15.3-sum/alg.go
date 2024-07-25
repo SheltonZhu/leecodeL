@@ -7,7 +7,7 @@ func threeSum(nums []int) [][]int {
 		return [][]int{}
 	}
 	sort.Ints(nums)
-	left, right := 0, 0
+	// left, right := 0, 0
 	var res [][]int
 	for i := 0; i < len(nums); i++ {
 		if nums[i] > 0 {
@@ -16,12 +16,12 @@ func threeSum(nums []int) [][]int {
 		if i > 0 && nums[i] == nums[i-1] {
 			continue
 		}
-		left = i + 1
-		right = len(nums) - 1
+		left := i + 1
+		right := len(nums) - 1
 		for left < right {
 			sum := nums[i] + nums[left] + nums[right]
 			if sum == 0 {
-				res = append(res, []int{nums[left], nums[i], nums[right]})
+				res = append(res, []int{nums[i], nums[left], nums[right]})
 				for left < right && nums[left] == nums[left+1] {
 					left++
 				}
